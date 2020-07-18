@@ -15,6 +15,8 @@ class Post(TimeStampModel):
     class Meta:
         ordering = ["-id"]
 
+    objects = models.Manager()
+
     author = models.ForeignKey(
         settings.AUTH_USER_MODEL, related_name="my_post_set", on_delete=models.CASCADE)
     title = models.CharField(max_length=20)
